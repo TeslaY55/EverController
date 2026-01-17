@@ -6,7 +6,6 @@ Minecraft sunucuları için gelişmiş kontrol ve loglama eklentisi.
 - Drop / Pickup loglama
 - Container break takibi
 - Discord webhook entegrasyonu
-- Yetkili giriş–çıkış takibi
 
 ## Kurulum
 1. Plugin jar dosyasını `plugins/` klasörüne at
