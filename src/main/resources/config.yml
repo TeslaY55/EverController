@@ -1,0 +1,119 @@
+# Veri tabanba
+# host: localhost veri tabanının bulunduğu ip adresi, veri tabanı zaten ana sunucudaysa localhost kullanabilirsiniz.
+# port: 3306 veri tabanının olduğu portu temsil eder, default 3306.
+# database: veri tabanının ismini belirtir.
+# username: root ve password: "" kısımları ise veri tabanı için gerekli olan kullanıcı adı ve parolayı temsil eder.
+
+mysql:
+  host: localhost
+  port: 3306
+  database: veritabanı
+  username: root
+  password: ""
+
+serverName: "SkyBlock"
+
+# Database loglamasını açmak için breakPlace.enable true yapın.
+# Loglanacak tablo ismini belirlemek için table: "" alanını doldurun.
+# Mesajlar webhooka aktarmak için discord.enable true yapın
+# breakPlace.discord.webhook-url kısmı mesajların loglanacağı kanalda oluşturduğunuz webhookun linkini yazın.
+# breakPlace.discord.keywords kısmına ise hangi eşyaların webhook aracılığıyla loglanacağını belirtir.
+# keywords: [""] virgülle ayırarak devam etmektedir, keywords: ["kelime1", "kelime2"]
+# breakPlace.wh değeri "whitelist" veya "blacklist" olarak ayarlanabilir.
+# breakPlace.limits.maxData değeri tablo üzerinde maximum kaç satır olabileceğini belirtir, eski satırlar silinir.
+# breakPlace.limits.limitDay değeri tablo üzerinde bulunan satırların kaç gün sonra silineceğini belirtir, 30 seçerseniz 30 günden önceki kayıtlar otomatik olarak silinir.
+breakPlace:
+  enable: false
+  table: ""
+  wh: "whitelist"
+  limits:
+    maxData: 1000000
+    limitDay: 30
+  keywords: ["DIRT", "SPONGE", "SPAWNER:SPIDER"]
+  discord:
+    enable: false
+    webhook-url: ""
+    keywords: ["SPAWNER:SPIDER"]
+
+# Database loglamasını açmak için dropPickup.enable true yapın.
+# Loglanacak tablo ismini belirlemek için table: "" alanını doldurun.
+# Mesajlar webhooka aktarmak için discord.enable true yapın
+# dropPickup.discord.webhook-url kısmı mesajların loglanacağı kanalda oluşturduğunuz webhookun linkini yazın.
+# dropPickup.discord.keywords kısmına ise hangi eşyaların webhook aracılığıyla loglanacağını belirtir.
+# keywords: [""] virgülle ayırarak devam etmektedir, keywords: ["kelime1", "kelime2"]
+# dropPickup.wh değeri "whitelist" veya "blacklist" olarak ayarlanabilir.
+# dropPickup.limits.maxData değeri tablo üzerinde maximum kaç satır olabileceğini belirtir, eski satırlar silinir.
+# dropPickup.limits.limitDay değeri tablo üzerinde bulunan satırların kaç gün sonra silineceğini belirtir, 30 seçerseniz 30 günden önceki kayıtlar otomatik olarak silinir.
+dropPickup:
+  enable: false
+  table: ""
+  wh: "whitelist"
+  limits:
+    maxData: 1000000
+    limitDay: 30
+  keywords: ["DIRT", "SPONGE", "SPAWNER:SPIDER"]
+  discord:
+    enable: false
+    webhook-url: ""
+    keywords: 
+    - "DIRT"
+
+# Database loglamasını açmak için playerMessage.enable kısmını true yapın.
+# Loglanacak tablo ismini belirlemek için table: "" alanını doldurun.
+# Mesajlar webhooka aktarmak için discord.enable kısmını true yapın.
+# playerMessage.discord.webhook-url kısmı mesajların loglanacağı kanalda oluşturduğunuz webhookun linkini yazın.
+# playerMessage.discord.keywords kısmına ise hangi mesajların webhook aracılığıyla loglanacağını belirtir.
+# keywords: [""] virgülle ayırarak devam etmektedir, keywords: ["kelime1", "kelime2"]
+# playerMessage.wh değeri "whitelist" veya "blacklist" olarak ayarlanabilir.
+# playerMessage.limits.maxData değeri tablo üzerinde maximum kaç satır olabileceğini belirtir, eski satırlar silinir.
+# playerMessage.limits.limitDay değeri tablo üzerinde bulunan satırların kaç gün sonra silineceğini belirtir, 30 seçerseniz 30 günden önceki kayıtlar otomatik olarak silinir.
+# message-format için kullanılabilecek placeholderlar:
+# %player% = oyuncunun ismini verir,
+# %uuid% = oyuncunun uuid kimliğini verir,
+# %time% = oyuncunun mesaj zamanını verir,
+# %server% = sunucunun ismini verir,
+# %message% = oyuncunun yazdığı mesajı verir.
+# Örnek format = message-format: ">>> -# **[%time%] | %player% »** %message%"
+playerMessage:
+  enable: false
+  table: ""
+  wh: "blacklist"
+  limits:
+    maxData: 1000000
+    limitDay: 30
+  keywords: ["selamlar"]
+  discord:
+    enable: false
+    message-format: ">>> -# **[%time%] | %player% »** %message%"
+    webhook-url: ""
+    keywords: ["selamlar"]
+
+# Database loglamasını açmak için command.enable kısmını true yapın.
+# Loglanacak tablo ismini belirlemek için table: "" alanını doldurun.
+# Mesajlar webhooka aktarmak için discord.enable kısmını true yapın.
+# command.discord.webhook-url kısmı mesajların loglanacağı kanalda oluşturduğunuz webhookun linkini yazın.
+# command.discord.keywords kısmına ise hangi mesajların webhook aracılığıyla loglanacağını belirtir.
+# keywords: [""] virgülle ayırarak devam etmektedir, keywords: ["kelime1", "kelime2"]
+# command.wh değeri "whitelist" veya "blacklist" olarak ayarlanabilir.
+# command.limits.maxData değeri tablo üzerinde maximum kaç satır olabileceğini belirtir, eski satırlar silinir.
+# command.limits.limitDay değeri tablo üzerinde bulunan satırların kaç gün sonra silineceğini belirtir, 30 seçerseniz 30 günden önceki kayıtlar otomatik olarak silinir.
+# message-format için kullanılabilecek placeholderlar:
+# %player% = oyuncunun ismini verir,
+# %uuid% = oyuncunun uuid kimliğini verir,
+# %time% = oyuncunun komut zamanını verir,
+# %server% = sunucunun ismini verir,
+# %command% = kullanılan komutu verir.
+# message-format: ">>> -# **[%time%] | %player% »** /%command%"
+command:
+  enable: false
+  table: ""
+  wh: "whitelist"
+  limits:
+    maxData: 1000000
+    limitDay: 30
+  keywords: ["spark", "cmi", "skin"]
+  discord:
+    enable: false
+    message-format: ">>> -# **[%time%] | %player% »** /%command%"
+    webhook-url: ""
+    keywords: ["spark", "cmi", "skin"]
